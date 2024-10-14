@@ -1,0 +1,4 @@
+[pvenodes]
+192.168.86.143 #Proxmox
+
+[VMs]
