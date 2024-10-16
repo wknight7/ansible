@@ -1,4 +1,6 @@
 [pvenodes]
-192.168.86.143 #Proxmox
+192.168.86.143 #Proxmox VE
+192.168.86.33 #Proxmox Backup Server
 
 [VMs]
+192.168.86.97 #Plex
