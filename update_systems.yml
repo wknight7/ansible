@@ -7,3 +7,7 @@
   - name: update systems
     apt:
       update_cache: yes
+
+  - name: upgrade systems
+    apt:
+      upgrade: dist
