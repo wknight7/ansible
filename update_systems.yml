@@ -5,11 +5,7 @@
   tasks:
 
   - name: update systems
-    apt:
+    package:
       update_cache: yes
-    when: ansible_distribution in ["Debian", "Ubuntu"]
-
-  - name: upgrade systems
-    apt:
       upgrade: dist
     when: ansible_distribution in ["Debian", "Ubuntu"]
