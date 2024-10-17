@@ -1,0 +1,36 @@
+--- 
+
+- hosts: all
+  become: true
+  tasks:
+
+  - name: copy file
+    copy:
+      src: [identified server]
+      dest: [files]
+      owner: wknight7
+      group: wknight7
+      mode: 0644
+
+- hosts: workstations         # note this is workstation.... so we can provision our own computers
+  become: true
+  tasks: 
+
+  - name: install unzip     ## allows you to unzip file from the source 
+    package:
+      name: unzip
+
+  - name: install terraform   #  
+    unarchive:
+      src: https://releases.hashicorp.com/terraform/0.12.28/terraform_0.12.28_linux_amd64.zip
+      dest: /usr/local/bin   # common directory where binaries are stored
+      remote_src: yes
+      mode: 0755
+      owner: wknight7
+      group: wknight7
+
+
+
+
+# this is from Learn Limux TV - ansible Series - video 11 
+# https://www.youtube.com/watch?v=teEhLgHpGgo
