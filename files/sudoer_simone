@@ -1,0 +1,3 @@
+simone ALL=(ALL) NOPASS: ALL
+
+# add to /etc/sudoers.d

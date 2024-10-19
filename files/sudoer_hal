@@ -1,0 +1,3 @@
+hal ALL=(ALL) NOPASSWD: ALL
+
+# add to /etc/sudoers.d
