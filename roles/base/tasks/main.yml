@@ -1,0 +1,10 @@
+--- 
+
+- name: add ssh key for hal
+  tags: always
+  authorized_key:
+    user: hal
+    key: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBoZNFWr6XqPvSTTfTw5QPLwjHwoQgfqLUBRgweuP3Gf ansible"
+
+
+## notice alingment!!! no hosts line!!!
