@@ -1,0 +1,26 @@
+--- 
+
+- hosts: all
+  become: true
+  tasks:
+
+  - name: create hal user
+    tags: always
+    user:
+      name: hal
+      groups: root,adm,wknight7
+
+  - name: add ssh key for hal
+    tags: always
+    authorized_key:
+      user: hal
+      key: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBoZNFWr6XqPvSTTfTw5QPLwjHwoQgfqLUBRgweuP3Gf ansible"
+
+  - name: add sudoers file for hal
+    tags: always
+    copy: 
+      src: sudoer_hal
+      dest: /etc/sudoers.d/hal
+      owner: root
+      group: root 
+      mode: 0440
